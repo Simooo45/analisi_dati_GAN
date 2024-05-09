@@ -1,0 +1,4 @@
+sed -i 's/\r//g' ./*.sh
+find outputs -type f -name "*.txt" -exec sh -c 'mkdir -p outputstxt/"$(dirname "{}")" && cp "{}" outputstxt/"{}"' \;
+find outputs -type f -name "chi2.txt" -exec sh -c 'mkdir -p outputstxt/"$(dirname "{}")" && cp "{}" outputstxt/"{}"' \;
+find outputs -type f -name "time_per_epoch.txt" -exec sh -c 'mkdir -p outputstxt/"$(dirname "{}")" && cp "{}" outputstxt/"{}"' \;

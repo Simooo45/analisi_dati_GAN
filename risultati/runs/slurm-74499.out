@@ -1,0 +1,341 @@
+INFO:    fuse: warning: library too old, some operations may not work
+Training the model...
+../common
+Loading common function file
+csv_dir: /scratch/nucleare/simone.elia/outputs/run3L_128_1024_128_R3/caloChallenge//csvFiles/
+root_vox_dir: /scratch/nucleare/simone.elia/outputs/run3L_128_1024_128_R3/caloChallenge//rootFiles/
+voxalisation_validation_dir: /scratch/nucleare/simone.elia/outputs/run3L_128_1024_128_R3/caloChallenge//validation_plots
+ Running in: /scratch/nucleare/simone.elia/code/BoloGAN/model
+Using the seed etas
+Baseline_pions_lwtnn
+Running in /scratch/nucleare/simone.elia/outputs/run3L_128_1024_128_R3/caloChallenge//Baseline_pions_lwtnn/All
+Creating checkpoint directory...
+testing /scratch/nucleare/simone.elia/outputs/run3L_128_1024_128_R3/caloChallenge//Baseline_pions_lwtnn/All/checkpoints/pions/checkpoints_eta_20_25/model-999.data-00000-of-00001
+Try to resume training
+pions, eta_min: 20, eta_max: 25 was not trained at all, starting from 0
+STARTING EPOCH CHECK: 0
+Running gan for particle: pions, eta_min: 20, eta_max: 25 starting from epoch 0
+Setup ...
+ROOT Version: 6.30/06
+Built for linuxx8664gcc on Apr 05 2024, 00:00:00
+From heads/master@tags/v6-30-06
+++ cd /scratch/nucleare/simone.elia/code/BoloGAN
+++ python3 -m model.train_V2_seed_wgangp -odg /scratch/nucleare/simone.elia/outputs/run3L_128_1024_128_R3/caloChallenge//Baseline_pions_lwtnn/All/checkpoints -e 0 -i /scratch/nucleare/simone.elia/datas/data -ip pions -emin 20 -emax 25 -r All --binning binning_3L_128_1024_128.xml
+Error in <TROOT::Macro>: macro rootlogon.C not found in path /scratch/nucleare/simone.elia/code/BoloGAN/model/utils/
+Error in <TROOT::LoadMacro>: macro AtlasUtils.C not found in path /scratch/nucleare/simone.elia/code/BoloGAN/model/utils/
+2024-05-02 18:19:48.966085: I external/local_tsl/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2024-05-02 18:19:49.269009: I external/local_tsl/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2024-05-02 18:19:50.242201: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-05-02 18:19:51.945970: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+(74499@bld05[0]) 2024-05-02 18:19:54,672 [INFO] __main__: Running on SLURM without GPU, using custom MultiWorkerMirroredStrategy
+(74499@bld05[0]) 2024-05-02 18:19:54,673 [DEBUG] __main__: Cluster configuration: ClusterSpec({'worker': ['bld05:12063']})
+WARNING:tensorflow:From /scratch/nucleare/simone.elia/code/BoloGAN/model/train_V2_seed_wgangp.py:52: _CollectiveAllReduceStrategyExperimental.__init__ (from tensorflow.python.distribute.collective_all_reduce_strategy) is deprecated and will be removed in a future version.
+Instructions for updating:
+use distribute.MultiWorkerMirroredStrategy instead
+(74499@bld05[0]) 2024-05-02 18:19:54,673 [WARNING] tensorflow: From /scratch/nucleare/simone.elia/code/BoloGAN/model/train_V2_seed_wgangp.py:52: _CollectiveAllReduceStrategyExperimental.__init__ (from tensorflow.python.distribute.collective_all_reduce_strategy) is deprecated and will be removed in a future version.
+Instructions for updating:
+use distribute.MultiWorkerMirroredStrategy instead
+2024-05-02 18:19:54.689503: I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:457] Started server with target: grpc://bld05:12063
+2024-05-02 18:19:54.697343: I external/local_tsl/tsl/distributed_runtime/coordination/coordination_service.cc:577] /job:worker/replica:0/task:0 has connected to coordination service. Incarnation: 14802750886031180832
+2024-05-02 18:19:54.697461: I external/local_tsl/tsl/distributed_runtime/coordination/coordination_service.cc:539] Waiting for 0/1 tasks to connect.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1714666794.697746 2099767 coordination_service_agent.cc:303] Coordination agent has successfully connected.
+INFO:tensorflow:Enabled multi-worker collective ops with available devices: ['/job:worker/replica:0/task:0/device:CPU:0']
+(74499@bld05[0]) 2024-05-02 18:19:54,698 [INFO] tensorflow: Enabled multi-worker collective ops with available devices: ['/job:worker/replica:0/task:0/device:CPU:0']
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:worker/task:0/device:CPU:0',)
+(74499@bld05[0]) 2024-05-02 18:19:54,783 [INFO] tensorflow: Using MirroredStrategy with devices ('/job:worker/task:0/device:CPU:0',)
+INFO:tensorflow:Check health not enabled.
+(74499@bld05[0]) 2024-05-02 18:19:54,783 [INFO] tensorflow: Check health not enabled.
+INFO:tensorflow:MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['bld05:12063']}, task_type = 'worker', task_id = 0, num_workers = 1, local_devices = ('/job:worker/task:0/device:CPU:0',), communication = CommunicationImplementation.AUTO
+(74499@bld05[0]) 2024-05-02 18:19:54,783 [INFO] tensorflow: MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['bld05:12063']}, task_type = 'worker', task_id = 0, num_workers = 1, local_devices = ('/job:worker/task:0/device:CPU:0',), communication = CommunicationImplementation.AUTO
+(74499@bld05[0]) 2024-05-02 18:19:54,783 [DEBUG] __main__: Loading data...
+(74499@bld05[0]) 2024-05-02 18:19:54,784 [INFO] common.VoxInputParameters: Basic parameters
+(74499@bld05[0]) 2024-05-02 18:19:54,784 [INFO] common.VoxInputParameters:  Running in folder /scratch/nucleare/simone.elia/datas/data using xml file: binning_3L_128_1024_128.xml
+(74499@bld05[0]) 2024-05-02 18:19:54,784 [INFO] common.VoxInputParameters:  Particle ID 211 with mass: 139.6
+(74499@bld05[0]) 2024-05-02 18:19:54,784 [INFO] common.VoxInputParameters:  For eta slice 20 to 25
+(74499@bld05[0]) 2024-05-02 18:19:54,784 [INFO] common.VoxInputParameters: 
+(74499@bld05[0]) 2024-05-02 18:19:54,799 [INFO] common.VoxInputParameters: Other voxelisation parameters
+(74499@bld05[0]) 2024-05-02 18:19:54,799 [INFO] common.VoxInputParameters:  mergeBinAlphaFirstBinR : False
+(74499@bld05[0]) 2024-05-02 18:19:54,799 [INFO] common.VoxInputParameters:  symmetriseAlpha        : False
+(74499@bld05[0]) 2024-05-02 18:19:54,799 [INFO] common.VoxInputParameters:  optimisedAlpha         : False
+(74499@bld05[0]) 2024-05-02 18:19:54,799 [INFO] common.VoxInputParameters:  isPolar                : True
+(74499@bld05[0]) 2024-05-02 18:19:54,799 [INFO] common.VoxInputParameters:  region                 : True
+(74499@bld05[0]) 2024-05-02 18:19:54,799 [INFO] common.VoxInputParameters: 
+(74499@bld05[0]) 2024-05-02 18:19:54,799 [INFO] common.DataParameters: False
+(74499@bld05[0]) 2024-05-02 18:19:54,799 [INFO] common.DataParameters: Training data parameters
+(74499@bld05[0]) 2024-05-02 18:19:54,799 [INFO] common.DataParameters:  * Label             : LogE
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.DataParameters:  * vox normalisation : normE
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.DataParameters:  * correct phiMod    : False
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.DataParameters:  * Range             : All
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.DataParameters:  * Exponents range   : 8 to 22
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.DataParameters:  * Momentum list     : [256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304]
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.DataParameters:  * Mid point         : 15 which is in position 7
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.DataParameters: 
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.XMLHandler: Searching for All
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.XMLHandler: In range: All
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.GANInputParameters: Initialised GAN with HP
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.GANInputParameters:   * BEnergy range               : All
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.GANInputParameters:   * Batch Size                  : 512
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.GANInputParameters:   * Lambda                      : 10.0
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.GANInputParameters:   * Training d/g                : 5
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.GANInputParameters:   * Generator learning rate     : 0.0001
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.GANInputParameters:   * Discriminator learning rate : 0.0001
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.GANInputParameters:   * Generator momentum          : 0.5
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.GANInputParameters:   * Discriminator momentum      : 0.5
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.GANInputParameters:   * Latent space                : 100
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.GANInputParameters:   * Generator layers            : 200, 400, 800
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.GANInputParameters:   * Discriminator layers        : 128, 1024, 128
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.GANInputParameters:   * Image size                  : 533
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.GANInputParameters:   * Use Batch Normalisation     : False
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.GANInputParameters:   * Activation function         : ReLU
+(74499@bld05[0]) 2024-05-02 18:19:54,800 [INFO] common.TrainingInputParameters: Training inputs parameters
+(74499@bld05[0]) 2024-05-02 18:19:54,801 [INFO] common.TrainingInputParameters:  Epochs from: 0 to 1000000 saving every 1000
+(74499@bld05[0]) 2024-05-02 18:19:54,801 [INFO] common.TrainingInputParameters: 
+Model: "functional_1"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ Noise (InputLayer)  │ (None, 100)       │          0 │ -                 │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ mycond (InputLayer) │ (None, 2)         │          0 │ -                 │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate         │ (None, 102)       │          0 │ Noise[0][0],      │
+│ (Concatenate)       │                   │            │ mycond[0][0]      │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense (Dense)       │ (None, 200)       │     20,600 │ concatenate[0][0] │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_1 (Dense)     │ (None, 400)       │     80,400 │ dense[0][0]       │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_2 (Dense)     │ (None, 800)       │    320,800 │ dense_1[0][0]     │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_3 (Dense)     │ (None, 533)       │    426,933 │ dense_2[0][0]     │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 848,733 (3.24 MB)
+ Trainable params: 848,733 (3.24 MB)
+ Non-trainable params: 0 (0.00 B)
+/usr/local/lib/python3.9/site-packages/keras/src/layers/core/dense.py:86: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+Model: "sequential"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Layer (type)                    ┃ Output Shape           ┃       Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ dense_4 (Dense)                 │ (None, 128)            │        68,608 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ re_lu (ReLU)                    │ (None, 128)            │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_5 (Dense)                 │ (None, 1024)           │       132,096 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ re_lu_1 (ReLU)                  │ (None, 1024)           │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_6 (Dense)                 │ (None, 128)            │       131,200 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ re_lu_2 (ReLU)                  │ (None, 128)            │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_7 (Dense)                 │ (None, 1)              │           129 │
+└─────────────────────────────────┴────────────────────────┴───────────────┘
+ Total params: 332,033 (1.27 MB)
+ Trainable params: 332,033 (1.27 MB)
+ Non-trainable params: 0 (0.00 B)
+(74499@bld05[0]) 2024-05-02 18:19:54,978 [INFO] model.conditional_wgangp: training started
+(74499@bld05[0]) 2024-05-02 18:19:54,979 [INFO] model.conditional_wgangp: Memory required before loading data: 789540
+(74499@bld05[0]) 2024-05-02 18:19:54,979 [INFO] model.conditional_wgangp: Opening vox files...
+(74499@bld05[0]) 2024-05-02 18:19:55,772 [DEBUG] model.conditional_wgangp: (1/15) Loaded /scratch/nucleare/simone.elia/datas/data/rootFiles/pions/pid211_E256_eta_20_25.root
+(74499@bld05[0]) 2024-05-02 18:19:55,786 [DEBUG] model.conditional_wgangp: (2/15) Loaded /scratch/nucleare/simone.elia/datas/data/rootFiles/pions/pid211_E512_eta_20_25.root
+(74499@bld05[0]) 2024-05-02 18:19:55,798 [DEBUG] model.conditional_wgangp: (3/15) Loaded /scratch/nucleare/simone.elia/datas/data/rootFiles/pions/pid211_E1024_eta_20_25.root
+(74499@bld05[0]) 2024-05-02 18:19:55,806 [DEBUG] model.conditional_wgangp: (4/15) Loaded /scratch/nucleare/simone.elia/datas/data/rootFiles/pions/pid211_E2048_eta_20_25.root
+(74499@bld05[0]) 2024-05-02 18:19:55,819 [DEBUG] model.conditional_wgangp: (5/15) Loaded /scratch/nucleare/simone.elia/datas/data/rootFiles/pions/pid211_E4096_eta_20_25.root
+(74499@bld05[0]) 2024-05-02 18:19:55,825 [DEBUG] model.conditional_wgangp: (6/15) Loaded /scratch/nucleare/simone.elia/datas/data/rootFiles/pions/pid211_E8192_eta_20_25.root
+(74499@bld05[0]) 2024-05-02 18:19:55,832 [DEBUG] model.conditional_wgangp: (7/15) Loaded /scratch/nucleare/simone.elia/datas/data/rootFiles/pions/pid211_E16384_eta_20_25.root
+(74499@bld05[0]) 2024-05-02 18:19:55,840 [DEBUG] model.conditional_wgangp: (8/15) Loaded /scratch/nucleare/simone.elia/datas/data/rootFiles/pions/pid211_E32768_eta_20_25.root
+(74499@bld05[0]) 2024-05-02 18:19:55,846 [DEBUG] model.conditional_wgangp: (9/15) Loaded /scratch/nucleare/simone.elia/datas/data/rootFiles/pions/pid211_E65536_eta_20_25.root
+(74499@bld05[0]) 2024-05-02 18:19:55,853 [DEBUG] model.conditional_wgangp: (10/15) Loaded /scratch/nucleare/simone.elia/datas/data/rootFiles/pions/pid211_E131072_eta_20_25.root
+(74499@bld05[0]) 2024-05-02 18:19:55,864 [DEBUG] model.conditional_wgangp: (11/15) Loaded /scratch/nucleare/simone.elia/datas/data/rootFiles/pions/pid211_E262144_eta_20_25.root
+(74499@bld05[0]) 2024-05-02 18:19:55,880 [DEBUG] model.conditional_wgangp: (12/15) Loaded /scratch/nucleare/simone.elia/datas/data/rootFiles/pions/pid211_E524288_eta_20_25.root
+(74499@bld05[0]) 2024-05-02 18:19:55,884 [DEBUG] model.conditional_wgangp: (13/15) Loaded /scratch/nucleare/simone.elia/datas/data/rootFiles/pions/pid211_E1048576_eta_20_25.root
+(74499@bld05[0]) 2024-05-02 18:19:55,888 [DEBUG] model.conditional_wgangp: (14/15) Loaded /scratch/nucleare/simone.elia/datas/data/rootFiles/pions/pid211_E2097152_eta_20_25.root
+(74499@bld05[0]) 2024-05-02 18:19:55,899 [DEBUG] model.conditional_wgangp: (15/15) Loaded /scratch/nucleare/simone.elia/datas/data/rootFiles/pions/pid211_E4194304_eta_20_25.root
+(74499@bld05[0]) 2024-05-02 18:19:55,899 [INFO] model.conditional_wgangp: Histogram made in 0.920684814453125s
+(74499@bld05[0]) 2024-05-02 18:19:55,900 [INFO] common.DataReader: ************* DATA READER ***************
+(74499@bld05[0]) 2024-05-02 18:19:55,900 [INFO] common.DataReader: Loading data
+(74499@bld05[0]) 2024-05-02 18:19:55,901 [INFO] common.DataReader: Loading data for pid 211, eta range 20 to 25
+(74499@bld05[0]) 2024-05-02 18:19:57,426 [INFO] common.DataReader: Loaded data from file pid211_E256_eta_20_25_voxalisation.csv for momentum = 256 (533 columns x 100000 events)
+(74499@bld05[0]) 2024-05-02 18:19:58,615 [INFO] common.DataReader: Loaded data from file pid211_E512_eta_20_25_voxalisation.csv for momentum = 512 (533 columns x 100000 events)
+(74499@bld05[0]) 2024-05-02 18:19:59,874 [INFO] common.DataReader: Loaded data from file pid211_E1024_eta_20_25_voxalisation.csv for momentum = 1024 (533 columns x 100000 events)
+(74499@bld05[0]) 2024-05-02 18:20:01,146 [INFO] common.DataReader: Loaded data from file pid211_E2048_eta_20_25_voxalisation.csv for momentum = 2048 (533 columns x 100000 events)
+(74499@bld05[0]) 2024-05-02 18:20:02,515 [INFO] common.DataReader: Loaded data from file pid211_E4096_eta_20_25_voxalisation.csv for momentum = 4096 (533 columns x 100000 events)
+(74499@bld05[0]) 2024-05-02 18:20:04,016 [INFO] common.DataReader: Loaded data from file pid211_E8192_eta_20_25_voxalisation.csv for momentum = 8192 (533 columns x 100000 events)
+(74499@bld05[0]) 2024-05-02 18:20:05,485 [INFO] common.DataReader: Loaded data from file pid211_E16384_eta_20_25_voxalisation.csv for momentum = 16384 (533 columns x 99900 events)
+(74499@bld05[0]) 2024-05-02 18:20:07,026 [INFO] common.DataReader: Loaded data from file pid211_E32768_eta_20_25_voxalisation.csv for momentum = 32768 (533 columns x 100000 events)
+(74499@bld05[0]) 2024-05-02 18:20:07,815 [INFO] common.DataReader: Loaded data from file pid211_E65536_eta_20_25_voxalisation.csv for momentum = 65536 (533 columns x 49900 events)
+(74499@bld05[0]) 2024-05-02 18:20:08,280 [INFO] common.DataReader: Loaded data from file pid211_E131072_eta_20_25_voxalisation.csv for momentum = 131072 (533 columns x 29700 events)
+(74499@bld05[0]) 2024-05-02 18:20:08,469 [INFO] common.DataReader: Loaded data from file pid211_E262144_eta_20_25_voxalisation.csv for momentum = 262144 (533 columns x 9800 events)
+(74499@bld05[0]) 2024-05-02 18:20:08,644 [INFO] common.DataReader: Loaded data from file pid211_E524288_eta_20_25_voxalisation.csv for momentum = 524288 (533 columns x 9850 events)
+(74499@bld05[0]) 2024-05-02 18:20:08,813 [INFO] common.DataReader: Loaded data from file pid211_E1048576_eta_20_25_voxalisation.csv for momentum = 1048576 (533 columns x 9700 events)
+(74499@bld05[0]) 2024-05-02 18:20:08,980 [INFO] common.DataReader: Loaded data from file pid211_E2097152_eta_20_25_voxalisation.csv for momentum = 2097152 (533 columns x 9480 events)
+(74499@bld05[0]) 2024-05-02 18:20:09,150 [INFO] common.DataReader: Loaded data from file pid211_E4194304_eta_20_25_voxalisation.csv for momentum = 4194304 (533 columns x 9575 events)
+(74499@bld05[0]) 2024-05-02 18:20:09,156 [INFO] common.DataReader: return value 0.000000, ekin 151.989026, e_min 151.989026, e_max 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:09,322 [INFO] common.DataReader: Data was normalised by 151.989026
+(74499@bld05[0]) 2024-05-02 18:20:09,323 [INFO] common.DataReader: return value 0.092430, ekin 391.090267, e_min 151.989026, e_max 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:09,490 [INFO] common.DataReader: Data was normalised by 391.090267
+(74499@bld05[0]) 2024-05-02 18:20:09,492 [INFO] common.DataReader: return value 0.173270, ekin 893.871896, e_min 151.989026, e_max 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:09,656 [INFO] common.DataReader: Data was normalised by 893.871896
+(74499@bld05[0]) 2024-05-02 18:20:09,658 [INFO] common.DataReader: return value 0.247687, ekin 1913.152338, e_min 151.989026, e_max 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:09,823 [INFO] common.DataReader: Data was normalised by 1913.152338
+(74499@bld05[0]) 2024-05-02 18:20:09,824 [INFO] common.DataReader: return value 0.318803, ekin 3958.778235, e_min 151.989026, e_max 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:09,989 [INFO] common.DataReader: Data was normalised by 3958.778235
+(74499@bld05[0]) 2024-05-02 18:20:09,990 [INFO] common.DataReader: return value 0.388255, ekin 8053.589377, e_min 151.989026, e_max 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:10,155 [INFO] common.DataReader: Data was normalised by 8053.589377
+(74499@bld05[0]) 2024-05-02 18:20:10,156 [INFO] common.DataReader: return value 0.456875, ekin 16244.994721, e_min 151.989026, e_max 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:10,321 [INFO] common.DataReader: Data was normalised by 16244.994721
+(74499@bld05[0]) 2024-05-02 18:20:10,322 [INFO] common.DataReader: return value 0.525079, ekin 32628.697364, e_min 151.989026, e_max 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:10,486 [INFO] common.DataReader: Data was normalised by 32628.697364
+(74499@bld05[0]) 2024-05-02 18:20:10,488 [INFO] common.DataReader: return value 0.593074, ekin 65396.548683, e_min 151.989026, e_max 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:10,570 [INFO] common.DataReader: Data was normalised by 65396.548683
+(74499@bld05[0]) 2024-05-02 18:20:10,571 [INFO] common.DataReader: return value 0.660965, ekin 130932.474341, e_min 151.989026, e_max 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:10,620 [INFO] common.DataReader: Data was normalised by 130932.474341
+(74499@bld05[0]) 2024-05-02 18:20:10,621 [INFO] common.DataReader: return value 0.728804, ekin 262004.437171, e_min 151.989026, e_max 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:10,638 [INFO] common.DataReader: Data was normalised by 262004.437171
+(74499@bld05[0]) 2024-05-02 18:20:10,639 [INFO] common.DataReader: return value 0.796617, ekin 524148.418585, e_min 151.989026, e_max 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:10,655 [INFO] common.DataReader: Data was normalised by 524148.418585
+(74499@bld05[0]) 2024-05-02 18:20:10,656 [INFO] common.DataReader: return value 0.864417, ekin 1048436.409293, e_min 151.989026, e_max 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:10,672 [INFO] common.DataReader: Data was normalised by 1048436.409293
+(74499@bld05[0]) 2024-05-02 18:20:10,673 [INFO] common.DataReader: return value 0.932210, ekin 2097012.404646, e_min 151.989026, e_max 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:10,688 [INFO] common.DataReader: Data was normalised by 2097012.404646
+(74499@bld05[0]) 2024-05-02 18:20:10,689 [INFO] common.DataReader: return value 1.000000, ekin 4194164.402323, e_min 151.989026, e_max 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:10,704 [INFO] common.DataReader: Data was normalised by 4194164.402323
+(74499@bld05[0]) 2024-05-02 18:20:10,705 [INFO] model.conditional_wgangp: Memory required after loading data: 6155152
+(74499@bld05[0]) 2024-05-02 18:20:10,705 [INFO] model.conditional_wgangp: Train seed
+(74499@bld05[0]) 2024-05-02 18:20:10,705 [INFO] model.conditional_wgangp: Training is done using all sample together
+(74499@bld05[0]) 2024-05-02 18:22:40,551 [INFO] model.conditional_wgangp: Got all data
+(74499@bld05[0]) 2024-05-02 18:22:40,552 [INFO] model.conditional_wgangp: Memory required after getting data: 13353772
+(74499@bld05[0]) 2024-05-02 18:24:28,434 [INFO] model.conditional_wgangp: Energies shape
+(74499@bld05[0]) 2024-05-02 18:24:28,436 [INFO] model.conditional_wgangp: (927905, 533)
+(74499@bld05[0]) 2024-05-02 18:24:28,437 [INFO] model.conditional_wgangp: Converted energies to tensor
+(74499@bld05[0]) 2024-05-02 18:24:28,438 [INFO] model.conditional_wgangp: Memory required after tensor transformation: 16440648
+(74499@bld05[0]) 2024-05-02 18:24:30,979 [INFO] model.conditional_wgangp: Converted labels to tensor
+(74499@bld05[0]) 2024-05-02 18:24:30,983 [INFO] model.conditional_wgangp: Labels shape
+(74499@bld05[0]) 2024-05-02 18:24:30,984 [INFO] model.conditional_wgangp: (927905, 2)
+2024-05-02 18:24:33.310005: W tensorflow/core/framework/dataset.cc:959] Input of GeneratorDatasetOp::Dataset will not be optimized because the dataset does not implement the AsGraphDefInternal() method needed to apply optimizations.
+(74499@bld05[0]) 2024-05-02 18:24:33,346 [DEBUG] model.conditional_wgangp: X_batch_shape: tf.Tensor([  5 512 533], shape=(3,), dtype=int32)
+(74499@bld05[0]) 2024-05-02 18:24:33,346 [DEBUG] model.conditional_wgangp: Labels_batch_shape: tf.Tensor([  5 512   2], shape=(3,), dtype=int32)
+(74499@bld05[0]) 2024-05-02 18:24:33,346 [INFO] model.conditional_wgangp: Using 927905 events
+(74499@bld05[0]) 2024-05-02 18:24:33,346 [INFO] model.conditional_wgangp: Epoch: 0
+(74499@bld05[0]) 2024-05-02 18:24:33,346 [INFO] model.conditional_wgangp: Loading new data using indexes from 8 to 22
+INFO:tensorflow:Error reported to Coordinator: in user code:
+
+    File "/scratch/nucleare/simone.elia/code/BoloGAN/model/conditional_wgangp.py", line 260, in train_discriminator_step  *
+        loss = self.D_loss(x_real, x_fake, D_real, D_fake, cond_label)
+    File "/scratch/nucleare/simone.elia/code/BoloGAN/model/conditional_wgangp.py", line 197, in D_loss  *
+        if self.last_chi2 != None:
+
+    AttributeError: 'WGANGP' object has no attribute 'last_chi2'
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/distribute/mirrored_run.py", line 387, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 1719, in bound_method_wrapper
+    return wrapped_fn(*args, **kwargs)
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 693, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 690, in wrapper
+    return converted_call(f, args, kwargs, options=options)
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 439, in converted_call
+    result = converted_f(*effective_args, **kwargs)
+  File "/tmp/__autograph_generated_file7yd04j7f.py", line 14, in tf__train_discriminator_step
+    loss = ag__.converted_call(ag__.ld(self).D_loss, (ag__.ld(x_real), ag__.ld(x_fake), ag__.ld(D_real), ag__.ld(D_fake), ag__.ld(cond_label)), None, fscope)
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 377, in converted_call
+    return _call_unconverted(f, args, kwargs, options)
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 460, in _call_unconverted
+    return f(*args)
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/util/traceback_utils.py", line 153, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/tmp/__autograph_generated_filelevn0tbw.py", line 27, in tf__D_loss
+    ag__.if_stmt(ag__.ld(self).last_chi2 != None, if_body, else_body, get_state, set_state, ('chi2_loss',), 1)
+AttributeError: in user code:
+
+    File "/scratch/nucleare/simone.elia/code/BoloGAN/model/conditional_wgangp.py", line 260, in train_discriminator_step  *
+        loss = self.D_loss(x_real, x_fake, D_real, D_fake, cond_label)
+    File "/scratch/nucleare/simone.elia/code/BoloGAN/model/conditional_wgangp.py", line 197, in D_loss  *
+        if self.last_chi2 != None:
+
+    AttributeError: 'WGANGP' object has no attribute 'last_chi2'
+
+(74499@bld05[0]) 2024-05-02 18:24:36,613 [INFO] tensorflow: Error reported to Coordinator: in user code:
+
+    File "/scratch/nucleare/simone.elia/code/BoloGAN/model/conditional_wgangp.py", line 260, in train_discriminator_step  *
+        loss = self.D_loss(x_real, x_fake, D_real, D_fake, cond_label)
+    File "/scratch/nucleare/simone.elia/code/BoloGAN/model/conditional_wgangp.py", line 197, in D_loss  *
+        if self.last_chi2 != None:
+
+    AttributeError: 'WGANGP' object has no attribute 'last_chi2'
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/distribute/mirrored_run.py", line 387, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 1719, in bound_method_wrapper
+    return wrapped_fn(*args, **kwargs)
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 693, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 690, in wrapper
+    return converted_call(f, args, kwargs, options=options)
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 439, in converted_call
+    result = converted_f(*effective_args, **kwargs)
+  File "/tmp/__autograph_generated_file7yd04j7f.py", line 14, in tf__train_discriminator_step
+    loss = ag__.converted_call(ag__.ld(self).D_loss, (ag__.ld(x_real), ag__.ld(x_fake), ag__.ld(D_real), ag__.ld(D_fake), ag__.ld(cond_label)), None, fscope)
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 377, in converted_call
+    return _call_unconverted(f, args, kwargs, options)
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 460, in _call_unconverted
+    return f(*args)
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/util/traceback_utils.py", line 153, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/tmp/__autograph_generated_filelevn0tbw.py", line 27, in tf__D_loss
+    ag__.if_stmt(ag__.ld(self).last_chi2 != None, if_body, else_body, get_state, set_state, ('chi2_loss',), 1)
+AttributeError: in user code:
+
+    File "/scratch/nucleare/simone.elia/code/BoloGAN/model/conditional_wgangp.py", line 260, in train_discriminator_step  *
+        loss = self.D_loss(x_real, x_fake, D_real, D_fake, cond_label)
+    File "/scratch/nucleare/simone.elia/code/BoloGAN/model/conditional_wgangp.py", line 197, in D_loss  *
+        if self.last_chi2 != None:
+
+    AttributeError: 'WGANGP' object has no attribute 'last_chi2'
+
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/scratch/nucleare/simone.elia/code/BoloGAN/model/train_V2_seed_wgangp.py", line 119, in <module>
+    wgan.train(inputsTraining, dataParameters)
+  File "/scratch/nucleare/simone.elia/code/BoloGAN/model/conditional_wgangp.py", line 465, in train
+    D_loss_curr, G_loss_curr = self.train_loop(samples, cond_labels)
+  File "/usr/local/lib64/python3.9/site-packages/tensorflow/python/util/traceback_utils.py", line 153, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/tmp/__autograph_generated_filet220i3gl.py", line 28, in tf__train_loop
+    ag__.for_stmt(ag__.converted_call(ag__.ld(tf).range, (ag__.ld(self).tf_n_disc,), None, fscope), None, loop_body, get_state, set_state, ('D_loss_curr',), {'iterate_names': 'i'})
+  File "/tmp/__autograph_generated_filet220i3gl.py", line 23, in loop_body
+    D_loss_curr = ag__.converted_call(ag__.ld(self)._distributed_strategy.run, (ag__.ld(self).train_discriminator_step,), dict(args=(ag__.ld(X), ag__.ld(cond_label))), fscope)
+  File "/tmp/__autograph_generated_file2945ilit.py", line 14, in tf__wrapped_fn
+    retval_ = ag__.converted_call(ag__.ld(call_for_each_replica), (ag__.ld(strategy), ag__.ld(fn).python_function, ag__.ld(args), ag__.ld(kwargs)), None, fscope)
+  File "/tmp/__autograph_generated_file7yd04j7f.py", line 14, in tf__train_discriminator_step
+    loss = ag__.converted_call(ag__.ld(self).D_loss, (ag__.ld(x_real), ag__.ld(x_fake), ag__.ld(D_real), ag__.ld(D_fake), ag__.ld(cond_label)), None, fscope)
+  File "/tmp/__autograph_generated_filelevn0tbw.py", line 27, in tf__D_loss
+    ag__.if_stmt(ag__.ld(self).last_chi2 != None, if_body, else_body, get_state, set_state, ('chi2_loss',), 1)
+AttributeError: in user code:
+
+    File "/scratch/nucleare/simone.elia/code/BoloGAN/model/conditional_wgangp.py", line 299, in train_loop  *
+        D_loss_curr = self._distributed_strategy.run(
+    File "/scratch/nucleare/simone.elia/code/BoloGAN/model/conditional_wgangp.py", line 260, in train_discriminator_step  *
+        loss = self.D_loss(x_real, x_fake, D_real, D_fake, cond_label)
+    File "/scratch/nucleare/simone.elia/code/BoloGAN/model/conditional_wgangp.py", line 197, in D_loss  *
+        if self.last_chi2 != None:
+
+    AttributeError: 'WGANGP' object has no attribute 'last_chi2'
+
+
+real	4m56.866s
+user	5m37.438s
+sys	0m31.240s
+++ set +x

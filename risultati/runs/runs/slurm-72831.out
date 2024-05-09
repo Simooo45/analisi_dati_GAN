@@ -1,0 +1,77 @@
+INFO:    fuse: warning: library too old, some operations may not work
+Training the model...
+../common
+Loading common function file
+csv_dir: /scratch/nucleare/simone.elia/outputs/run3L_512_64_32_32_32/caloChallenge//csvFiles/
+root_vox_dir: /scratch/nucleare/simone.elia/outputs/run3L_512_64_32_32_32/caloChallenge//rootFiles/
+voxalisation_validation_dir: /scratch/nucleare/simone.elia/outputs/run3L_512_64_32_32_32/caloChallenge//validation_plots
+ Running in: /scratch/nucleare/simone.elia/code/BoloGAN/model
+Using the seed etas
+Baseline_pions_lwtnn
+Running in /scratch/nucleare/simone.elia/outputs/run3L_512_64_32_32_32/caloChallenge//Baseline_pions_lwtnn/All
+Creating checkpoint directory...
+testing /scratch/nucleare/simone.elia/outputs/run3L_512_64_32_32_32/caloChallenge//Baseline_pions_lwtnn/All/checkpoints/pions/checkpoints_eta_20_25/model-999.data-00000-of-00001
+Try to resume training
+pions, eta_min: 20, eta_max: 25 was not trained at all, starting from 0
+STARTING EPOCH CHECK: 0
+Running gan for particle: pions, eta_min: 20, eta_max: 25 starting from epoch 0
+Setup ...
+ROOT Version: 6.30/06
+Built for linuxx8664gcc on Apr 05 2024, 00:00:00
+From heads/master@tags/v6-30-06
+++ cd /scratch/nucleare/simone.elia/code/BoloGAN
+++ python3 -m model.train_V2_seed_wgangp -odg /scratch/nucleare/simone.elia/outputs/run3L_512_64_32_32_32/caloChallenge//Baseline_pions_lwtnn/All/checkpoints -e 0 -i /scratch/nucleare/simone.elia/datas/data -ip pions -emin 20 -emax 25 -r All --binning binning_3L_512_64_32_32_32.xml
+Error in <TROOT::Macro>: macro rootlogon.C not found in path /scratch/nucleare/simone.elia/code/BoloGAN/model/utils/
+Error in <TROOT::LoadMacro>: macro AtlasUtils.C not found in path /scratch/nucleare/simone.elia/code/BoloGAN/model/utils/
+2024-04-26 06:50:14.837569: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-04-26 06:50:14.857587: I external/local_tsl/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2024-04-26 06:50:15.122293: I external/local_tsl/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2024-04-26 06:50:15.961402: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-04-26 06:50:17.273006: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+(72831@mtx20[0]) 2024-04-26 06:50:19,075 [INFO] __main__: Running on SLURM without GPU, using custom MultiWorkerMirroredStrategy
+(72831@mtx20[0]) 2024-04-26 06:50:19,076 [DEBUG] __main__: Cluster configuration: ClusterSpec({'worker': ['mtx20:12245']})
+WARNING:tensorflow:From /scratch/nucleare/simone.elia/code/BoloGAN/model/train_V2_seed_wgangp.py:52: _CollectiveAllReduceStrategyExperimental.__init__ (from tensorflow.python.distribute.collective_all_reduce_strategy) is deprecated and will be removed in a future version.
+Instructions for updating:
+use distribute.MultiWorkerMirroredStrategy instead
+(72831@mtx20[0]) 2024-04-26 06:50:19,076 [WARNING] tensorflow: From /scratch/nucleare/simone.elia/code/BoloGAN/model/train_V2_seed_wgangp.py:52: _CollectiveAllReduceStrategyExperimental.__init__ (from tensorflow.python.distribute.collective_all_reduce_strategy) is deprecated and will be removed in a future version.
+Instructions for updating:
+use distribute.MultiWorkerMirroredStrategy instead
+2024-04-26 06:50:19.099021: I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:457] Started server with target: grpc://mtx20:12245
+2024-04-26 06:50:19.104180: I external/local_tsl/tsl/distributed_runtime/coordination/coordination_service.cc:577] /job:worker/replica:0/task:0 has connected to coordination service. Incarnation: 9290022075511978375
+2024-04-26 06:50:19.104298: I external/local_tsl/tsl/distributed_runtime/coordination/coordination_service.cc:539] Waiting for 0/1 tasks to connect.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1714107019.104447  436935 coordination_service_agent.cc:303] Coordination agent has successfully connected.
+INFO:tensorflow:Enabled multi-worker collective ops with available devices: ['/job:worker/replica:0/task:0/device:CPU:0']
+(72831@mtx20[0]) 2024-04-26 06:50:19,105 [INFO] tensorflow: Enabled multi-worker collective ops with available devices: ['/job:worker/replica:0/task:0/device:CPU:0']
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:worker/task:0/device:CPU:0',)
+(72831@mtx20[0]) 2024-04-26 06:50:19,141 [INFO] tensorflow: Using MirroredStrategy with devices ('/job:worker/task:0/device:CPU:0',)
+INFO:tensorflow:Check health not enabled.
+(72831@mtx20[0]) 2024-04-26 06:50:19,142 [INFO] tensorflow: Check health not enabled.
+INFO:tensorflow:MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['mtx20:12245']}, task_type = 'worker', task_id = 0, num_workers = 1, local_devices = ('/job:worker/task:0/device:CPU:0',), communication = CommunicationImplementation.AUTO
+(72831@mtx20[0]) 2024-04-26 06:50:19,142 [INFO] tensorflow: MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['mtx20:12245']}, task_type = 'worker', task_id = 0, num_workers = 1, local_devices = ('/job:worker/task:0/device:CPU:0',), communication = CommunicationImplementation.AUTO
+(72831@mtx20[0]) 2024-04-26 06:50:19,142 [DEBUG] __main__: Loading data...
+(72831@mtx20[0]) 2024-04-26 06:50:19,142 [INFO] common.VoxInputParameters: Basic parameters
+(72831@mtx20[0]) 2024-04-26 06:50:19,142 [INFO] common.VoxInputParameters:  Running in folder /scratch/nucleare/simone.elia/datas/data using xml file: binning_3L_512_64_32_32_32.xml
+(72831@mtx20[0]) 2024-04-26 06:50:19,142 [INFO] common.VoxInputParameters:  Particle ID 211 with mass: 139.6
+(72831@mtx20[0]) 2024-04-26 06:50:19,142 [INFO] common.VoxInputParameters:  For eta slice 20 to 25
+(72831@mtx20[0]) 2024-04-26 06:50:19,142 [INFO] common.VoxInputParameters: 
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/scratch/nucleare/simone.elia/code/BoloGAN/model/train_V2_seed_wgangp.py", line 112, in <module>
+    xml = XMLHandler(voxInputs)
+  File "/scratch/nucleare/simone.elia/code/BoloGAN/common/XMLHandler.py", line 26, in __init__
+    tree = ET.parse(self.inputs.vox_dir + "/" + self.inputs.xmlFileName)
+  File "/usr/lib64/python3.9/xml/etree/ElementTree.py", line 1222, in parse
+    tree.parse(source, parser)
+  File "/usr/lib64/python3.9/xml/etree/ElementTree.py", line 569, in parse
+    source = open(source, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/scratch/nucleare/simone.elia/datas/data/binning_3L_512_64_32_32_32.xml'
+
+real	0m8.485s
+user	0m2.892s
+sys	0m4.831s
+++ set +x
