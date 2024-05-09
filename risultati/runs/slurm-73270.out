@@ -1,0 +1,3 @@
+mkdir: cannot create directory ‘/scratch/nucleare/simone.elia/outputs/run5L_256_64_16_8_4’: File exists
+INFO:    fuse: warning: library too old, some operations may not work
+Working directory is not empty! Please clean it before running the container.
