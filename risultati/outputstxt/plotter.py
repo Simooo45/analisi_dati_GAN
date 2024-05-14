@@ -6,6 +6,7 @@ import numpy as np
 
 TIME = False
 NORM = False
+N_MIN = 50
 
 
 
@@ -34,7 +35,7 @@ def multiple_contains(string: str, substring_list: list):
 
 def plot():
     # Definisci la cartella contenente i file
-    folder_path = 'D:\Desktop\BoloGANTainer_castle\\risultati\outputstxt\outputstxt\outputs'  
+    folder_path = 'D:\D\gitRepos\\analisi_dati_GAN\\risultati\outputstxt\outputstxt\outputs'  
 
     # Lista per memorizzare i percorsi dei file
     file_paths = []
@@ -56,7 +57,8 @@ def plot():
 
     # Carica i file di testo e uniscili in un unico DataFrame
     dfs = [pd.read_csv(file, delimiter='\t', header=None).head(1000) for file in file_paths]  # Se i dati sono separati da tabulazioni, altrimenti modifica il separatore di conseguenza
-    sorted_dfs = sorted([df for df in dfs if df.min()[0] > 0], 
+    filtered_dfs = [df for df in dfs if len(df[0]) >= N_MIN]
+    sorted_dfs = sorted([df for df in filtered_dfs if df.min()[0] > 0], 
                         key=lambda x: ((x.iloc[:, 0].values < 10).sum()), 
                         reverse=True)[:]
 
@@ -67,40 +69,41 @@ def plot():
     infos = []
     # Plotta i dati da ogni file
     for file_path, df in zip(dirs, dfs):
-        min_value = df.min()[0]
-        min_index = df.idxmin()[0]*(10**3)
-        if min_value > 0 and not TIME:
-            layers_list = file_path[6:].split('_')
-            layers = []
-            for l in layers_list:
-                try: 
-                    layers.append(int(l))
-                except:
-                    pass
-            dict_info = {}
-            dict_info["file"] = file_path
-            print(f"FILE:       {dict_info['file']}")
+        if any(df.equals(sorted_df) for sorted_df in sorted_dfs):
+            min_value = df.min()[0]
+            min_index = df.idxmin()[0]*(10**3)
+            if min_value >= 0 and not TIME:
+                layers_list = file_path[6:].split('_')
+                layers = []
+                for l in layers_list:
+                    try: 
+                        layers.append(int(l))
+                    except:
+                        pass
+                dict_info = {}
+                dict_info["file"] = file_path
+                print(f"FILE:       {dict_info['file']}")
 
-            dict_info["n_conn"] = n_connections(533, layers)
-            print(f"CONN:       {dict_info['n_conn']}")
+                dict_info["n_conn"] = n_connections(533, layers)
+                print(f"CONN:       {dict_info['n_conn']}")
 
-            dict_info["avg_chi"] = pond_avg(df)
-            print(f"CHI_AVG:    {dict_info['avg_chi']}")
+                dict_info["avg_chi"] = pond_avg(df)
+                print(f"CHI_AVG:    {dict_info['avg_chi']}")
 
-            infos.append(dict_info)
+                infos.append(dict_info)
 
-        if any(df.equals(sorted_df) for sorted_df in sorted_dfs) \
-                and multiple_contains(file_path, [''] )\
-                and min_value > 0:
-            
+            if any(df.equals(sorted_df) for sorted_df in sorted_dfs) \
+                    and multiple_contains(file_path, [''] )\
+                    and min_value >= 0:
+                
 
-            filtered_df = df[df.index >= 2]
-            line, = plt.plot(filtered_df.index*(10**3), normalize(filtered_df), label=os.path.basename(file_path)) 
-            if (not TIME):
-                plt.annotate('{}  \n{:.2f}'.format(file_path[6:].replace('_', '|'), min_value), xy=(min_index, min_value),
-                    xytext=(min_index + 10, min_value + 0.1),
-                    arrowprops=dict(facecolor=line.get_color(), shrink=0.05, color=line.get_color()),
-                    rotation='vertical', verticalalignment='top')
+                filtered_df = df[df.index >= 2]
+                line, = plt.plot(filtered_df.index*(10**3), normalize(filtered_df), label=os.path.basename(file_path)) 
+                if (not TIME):
+                    plt.annotate('{}  \n{:.2f}'.format(file_path[6:].replace('_', '|'), min_value), xy=(min_index, min_value),
+                        xytext=(min_index + 10, min_value + 0.1),
+                        arrowprops=dict(facecolor=line.get_color(), shrink=0.05, color=line.get_color()),
+                        rotation='vertical', verticalalignment='top')
 
     plt.xlabel('Epoca') 
     plt.ylabel('Secondi' if TIME else 'Chi2/dof')

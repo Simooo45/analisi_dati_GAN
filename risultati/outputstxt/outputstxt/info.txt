@@ -1,5 +1,0 @@
-128_1024_128_R3     -> Chi2 ogni 1000 Epoche
-
-800_400_200_R3      -> Runnato su MTX20
-128_1024_128_R4     -> Runnato su MTX20
-200_1024_16_R3      -> Runnato su MTX20

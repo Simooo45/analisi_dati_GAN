@@ -2,3 +2,10 @@ sed -i 's/\r//g' ./*.sh
 find outputs -type f -name "*.txt" -exec sh -c 'mkdir -p outputstxt/"$(dirname "{}")" && cp "{}" outputstxt/"{}"' \;
 find outputs -type f -name "chi2.txt" -exec sh -c 'mkdir -p outputstxt/"$(dirname "{}")" && cp "{}" outputstxt/"{}"' \;
 find outputs -type f -name "time_per_epoch.txt" -exec sh -c 'mkdir -p outputstxt/"$(dirname "{}")" && cp "{}" outputstxt/"{}"' \;
+
+
+find /scratch/nucleare/simone.elia -type f -name "*.data-00000-of-00001" -delete 
+find /scratch/nucleare/simone.elia -type f -name "g_loss.txt" -delete 
+find /scratch/nucleare/simone.elia -type f -name "d_loss.txt" -delete 
+
+scp -J simone.elia@137.204.50.15 -r simone.elia@137.204.50.73:/scratch/nucleare/simone.elia/outputstxt .\
